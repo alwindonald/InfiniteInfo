@@ -17,7 +17,7 @@ import { useUserContext } from "@/context/AuthContext";
 
 const SigninForm = () => {
   const { toast } = useToast()
-  const { checkAuthUser , isLoading: isUerLoading } = useUserContext();
+  const { checkAuthUser , isLoading: isUserLoading } = useUserContext();
   const navigate = useNavigate();
 
  
@@ -104,7 +104,7 @@ return (
             )}
           />
       <Button type="submit" className="shad-button_primary">
-      {isUerLoading ? (
+      {isUserLoading ? (
               <div className="flex-center gap-2">
                 <Loader /> Loading...
               </div>
