@@ -5,6 +5,9 @@ import {
   useInfiniteQuery,
 } from "@tanstack/react-query";
 
+
+
+
 import { QUERY_KEYS } from "@/lib/react-query/queryKeys";
 import {
   createUserAccount,
@@ -63,12 +66,13 @@ export const useGetPosts = () => {
       // If there's no data, there are no more pages.
       if (lastPage && lastPage.documents.length === 0) {
         return null;
-      }
+      };
 
       // Use the $id of the last document as the cursor.
       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
       return lastId;
     },
+    initialPageParam: 0,
   });
 };
 
